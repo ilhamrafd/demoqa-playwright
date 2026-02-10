@@ -9,3 +9,10 @@ test("demoqa - Text Box",async function ({page}) {
     expect(await page.getByText('Ilham')).toBeTruthy()
     await page.waitForTimeout(3000)
 })
+
+test.only("demoqa - Checkbox",async function ({page}) {
+    await page.goto('https://demoqa.com/checkbox')
+    await page.locator('//*[@id="tree-node"]/ol/li/span/button').click()
+    // await page.locator('//*[@id="tree-node"]/ol/li/ol/li[1]/ol/li[1]/span/label').click()
+    await page.waitForTimeout(3000)
+})
