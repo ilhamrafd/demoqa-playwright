@@ -12,14 +12,9 @@ test("demoqa - Text Box",async function ({page}) {
 
 test.only("demoqa - Checkbox",async function ({page}) {
     await page.goto('https://demoqa.com/checkbox')
-    // using locator
-    await page.locator('//*[@id="tree-node"]/ol/li/span/button').click() // click home checkbox
-    expect(page.getByText('Downloads')).toBeTruthy() // validation check if text true (appear)
-    await page.locator('//*[@id="tree-node"]/ol/li/ol/li[1]/span/button').click() // click desktop checkbox
-    
-    // using Frame Locator
-    await page.getByText('Downloads').click()
-    await page.getByRole('button',{name:'Toggle'}).nth(1).click()
+    await page.getByRole('button',{name:'Toggle'}).click()
+    await page.getByText('Desktop').click()
+    await page.getByRole('button',{name:'Toggle'}).nth(3).click()
     await page.getByText('Word File.doc').click()
     await page.waitForTimeout(3000)
 })
