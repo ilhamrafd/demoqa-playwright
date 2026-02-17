@@ -26,10 +26,7 @@ test.only("demoqa - Checkbox",async function ({page}) {
     await page.locator('//*[@id="root"]/div[1]/div/div/div[2]/div[2]/div/div[3]/div/div/div/div/span[2]').click()
     await page.locator('//*[@id="root"]/div[1]/div/div/div[2]/div[2]/div/div[3]/div/div/div/div[2]/span[2]').click()
     await page.locator('//*[@id="root"]/div[1]/div/div/div[2]/div[2]/div/div[3]/div/div/div/div[6]/span[2]').click()
-    // await page.getByRole('button',{name:'Toggle'}).click()
-    // expect(await page.getByRole('button',{name:'Toggle'})).toContainClass(page.locator('//*[@id="tree-node"]/ol/li/ol/li[1]/span/label/span[1]/svg')) // validation for checked checkbox
-    // await page.getByText('Desktop').click()
-    // await page.getByRole('button',{name:'Toggle'}).nth(3).click()
-    // await page.getByText('Word File.doc').click()
+    await page.getByText('Desktop').click()
+    await page.getByText('Word File.doc').click()
     await page.waitForTimeout(3000)
 })
