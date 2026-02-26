@@ -31,3 +31,13 @@ test("demoqa - Checkbox",async function ({page}) {
     expect(await page.locator('div',{name:'You have selected :'}).filter(page.locator('span',{name:'text-success'}))).toBeVisible()
     // await page.waitForTimeout(3000)
 })
+
+test("demoqa - Radio Button",async function ({page}) {
+    await page.goto('https://demoqa.com/')
+    await page.getByText('Elements').click()
+    await page.getByText('Radio Button').click()
+    await page.getByText('Yes').click()
+    await page.getByText('Impressive').click()
+    expect(await page.locator('p',{name:'You have selected '}).filter(page.locator('span',{name:'text-success'}))).toBeVisible()
+    await page.waitForTimeout(3000)
+})
